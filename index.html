@@ -1489,7 +1489,7 @@
     }
 
     /* ==============================
-   INSTAGRAM STRIP
+   INSTAGRAM STRIP (PREMIUM SHOWCASE)
    ============================== */
     #insta-strip {
       padding: 80px 60px;
@@ -1499,7 +1499,7 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 4px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .insta-item {
@@ -1513,25 +1513,61 @@
     .insta-item-inner {
       width: 100%;
       height: 100%;
-      transition: transform var(--transition-panel);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      filter: brightness(0.92);
     }
 
+    .insta-item-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Mobile: slow continuous zoom */
+    @media (max-width: 768px) {
+      .insta-item-inner {
+        animation: instaZoom 10s ease-in-out infinite alternate;
+      }
+    }
+
+    @keyframes instaZoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+
+    /* Desktop hover */
     .insta-item:hover .insta-item-inner {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      filter: brightness(1.06);
     }
 
+    /* Overlay */
     .insta-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(58, 46, 42, 0);
+      background: linear-gradient(to top, rgba(58,46,42,0.72) 0%, rgba(58,46,42,0) 55%);
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      transition: background var(--transition-panel);
+      padding-bottom: 14px;
+      opacity: 0;
+      transition: opacity 0.45s ease;
     }
 
     .insta-item:hover .insta-overlay {
-      background: rgba(58, 46, 42, 0.3);
+      opacity: 1;
+    }
+
+    .insta-overlay-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      text-align: center;
+      padding: 0 8px;
     }
 
     .insta-handle {
@@ -3639,41 +3675,54 @@
         </div>
       </section>
 
-      <!-- INSTAGRAM STRIP -->
+      <!-- INSTAGRAM / PREMIUM SHOWCASE STRIP -->
       <section id="insta-strip">
         <div class="insta-grid" id="insta-grid">
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/736x/a5/87/b4/a587b4fab3f262642235ad34266e0cab.jpg" alt="Gift Hamper" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Handcrafted</span></div>
           </div>
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/736x/d2/9b/90/d29b90be740cd261c07ce7fd30b7be2d.jpg" alt="Resin Art" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Resin Art</span></div>
           </div>
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/1200x/01/3a/07/013a0707a798b87a04e6b5c5ca19a991.jpg" alt="Premium Packaging" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Premium Packaging</span></div>
           </div>
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/1200x/71/8f/23/718f23764aedfca1222e1e969a3913eb.jpg" alt="Handwritten Note" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Custom Gifts</span></div>
           </div>
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1602607875897-8bd89ca82fd1?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/1200x/7d/f7/5b/7df75b99237f577fc22bb8625d368ee7.jpg" alt="Wedding Gift" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Wedding Collection</span></div>
           </div>
+
           <div class="insta-item">
-            <div class="insta-item-inner"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=300"
-                style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="insta-overlay"></div>
+            <div class="insta-item-inner">
+              <img src="https://i.pinimg.com/736x/b6/45/b1/b645b11f454b6028577f54a902472390.jpg" alt="Lifestyle" loading="lazy">
+            </div>
+            <div class="insta-overlay"><span class="insta-overlay-label">Made with Love</span></div>
           </div>
+
         </div>
-        <p class="insta-handle">@aashirwad.gifts</p>
+        <p class="insta-handle">Ashirwad Hampers &amp; Resin Art</p>
       </section>
 
       <!-- FOOTER -->
@@ -4138,7 +4187,7 @@
       { name: "Resin", letter: "R", bg: "linear-gradient(135deg,#F2D0D4 0%,#D6BFA7 100%)", image: "https://i.pinimg.com/736x/d1/3f/98/d13f98d9fc57718fd5c7ba89adee609d.jpg" },
       { name: "Hampers", letter: "H", bg: "linear-gradient(135deg,#EDD9C0 0%,#C9A9A6 100%)", image: "https://i.pinimg.com/736x/6d/bb/5f/6dbb5f108cb52c19962874c68040474e.jpg" },
       { name: "Wedding Boxes", letter: "W", bg: "linear-gradient(135deg,#F0E8D8 0%,#D6BFA7 100%)", image: "https://i.pinimg.com/1200x/df/06/f5/df06f5e127c4ed6446e04020396e1a18.jpg" },
-      { name: "Wedding Items", letter: "\uD83D\uDC8D", bg: "linear-gradient(135deg,#FDEBD0 0%,#E8C9A0 100%)", image: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=600&q=80&fit=crop" },
+      { name: "Wedding Items", letter: "\uD83D\uDC8D", bg: "linear-gradient(135deg,#FDEBD0 0%,#E8C9A0 100%)", image: "https://i.pinimg.com/736x/2e/3c/9a/2e3c9a4c8fbc8838c8a15810dc31bfc3.jpg" },
       { name: "Decoration Items", letter: "D", bg: "linear-gradient(135deg,#D4C5B0 0%,#BFA98C 100%)", image: "https://i.pinimg.com/1200x/97/64/86/976486f6732975d35ab90505a5d5cea1.jpg" },
       { name: "Sahe Chithi", letter: "S", bg: "linear-gradient(135deg,#F5DDE8 0%,#E8C0CC 100%)", image: "https://i.pinimg.com/1200x/58/ad/26/58ad2692a58622bad0cf51d516f4d4c3.jpg" },
       { name: "Lehnga Box", letter: "L", bg: "linear-gradient(135deg,#8B3A3A 0%,#C9A9A6 100%)", image: "https://i.pinimg.com/736x/ce/b4/9c/ceb49ccccb2be9048b11fac71c59843b.jpg" },
