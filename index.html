@@ -267,7 +267,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 999;
+      z-index: 10001;
       height: 80px;
       display: flex;
       align-items: center;
@@ -840,133 +840,6 @@
     <div class="load-line"></div>
     <div class="load-progress-track">
       <div class="load-progress-bar"></div>
-    </div>
-  </div>
-
-  <!-- OVERLAY BG -->
-  <div class="overlay-bg" id="overlay-bg"></div>
-
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-left">
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-logo" onclick="navigateTo('home')">Ashirwad</div>
-    </div>
-    <div class="nav-center">
-      <span class="nav-link" onclick="navigateTo('home')">Home</span>
-      <span class="nav-link" id="nav-categories" onmouseenter="openMegaMenu()"
-        onclick="navigateTo('shop')">Categories</span>
-      <span class="nav-link" onclick="navigateTo('shop')">Shop</span>
-      <span class="nav-link" onclick="scrollToSection('why-us')">About</span>
-      <span class="nav-link" onclick="scrollToSection('footer')">Contact</span>
-    </div>
-    <div class="nav-right">
-      <button class="nav-icon-btn" id="search-btn" onclick="toggleSearch()" aria-label="Search">
-        <svg viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.35-4.35" />
-        </svg>
-      </button>
-      <button class="nav-icon-btn" onclick="openCart()" aria-label="Cart">
-        <svg viewBox="0 0 24 24">
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <path d="M16 10a4 4 0 0 1-8 0" />
-        </svg>
-        <span class="cart-badge" id="cart-badge">0</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- SEARCH BAR -->
-  <div id="search-bar">
-    <input type="text" id="search-input" placeholder="Search for gifts, hampers, keychains..."
-      oninput="handleSearch(this.value)">
-    <div id="search-results"></div>
-  </div>
-
-  <!-- MEGA MENU -->
-  <div id="mega-menu" onmouseleave="closeMegaMenu()">
-    <div class="mega-categories">
-      <div class="mega-cat-item active" onmouseenter="showMegaSub('resin')" onclick="filterCategory('Resin')">Resin
-      </div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('hampers')" onclick="filterCategory('Hampers')">Hampers</div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('direct')" onclick="filterCategory('Wedding Boxes')">Wedding
-        Boxes</div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('wedding-items')" onclick="filterCategory('Wedding Items')">Wedding
-        Items</div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('deco')" onclick="filterCategory('Decoration Items')">
-        Decoration Items</div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('sahechithi')" onclick="filterCategory('Sahe Chithi')">Sahe
-        Chithi</div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('lehnga')" onclick="filterCategory('Lehnga Box')">Lehnga Box
-      </div>
-      <div class="mega-cat-item" onmouseenter="showMegaSub('other')" onclick="filterCategory('Other Products')">Other
-        Products</div>
-    </div>
-    <div style="position:relative;">
-      <div class="mega-sub-panel active" id="sub-resin">
-        <div class="mega-sub-title">Resin Collection</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Keychains')">Keychains</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Pendants')">Pendants</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Jewelry')">Jewelry</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Preservers')">Preservers</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Resin Platters')">Resin Platters</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Resin','Other Resin Items')">Other Resin Items</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-hampers">
-        <div class="mega-sub-title">Hamper Collections</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterSubcategory('Hampers','Birthday Hampers')">Birthday Hampers</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Hampers','Festive Hampers')">Festive Hampers</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Hampers','Custom Hampers')">Custom Hampers</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-direct">
-        <div class="mega-sub-title">Wedding Boxes</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterCategory('Wedding Boxes')">View All Wedding Boxes</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-deco">
-        <div class="mega-sub-title">Decoration Items</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterCategory('Decoration Items')">View All Decoration Items</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-sahechithi">
-        <div class="mega-sub-title">Sahe Chithi</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterSubcategory('Sahe Chithi','Resin Invitation Card')">Resin Invitation
-            Card</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Sahe Chithi','Invitation Card')">Invitation Card</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-lehnga">
-        <div class="mega-sub-title">Lehnga Box</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterCategory('Lehnga Box')">View All Lehnga Boxes</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-wedding-items">
-        <div class="mega-sub-title">Wedding Items</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterSubcategory('Wedding Items','Sehra')">Sehra</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Wedding Items','Kalgi')">Kalgi</span>
-          <span class="mega-sub-tag" onclick="filterSubcategory('Wedding Items','Mala')">Mala</span>
-          <span class="mega-sub-tag" onclick="filterCategory('Wedding Items')">View All Wedding Items</span>
-        </div>
-      </div>
-      <div class="mega-sub-panel" id="sub-other">
-        <div class="mega-sub-title">Other Products</div>
-        <div class="mega-sub-tags">
-          <span class="mega-sub-tag" onclick="filterCategory('Other Products')">View All</span>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -1619,12 +1492,41 @@
       display: block;
     }
 
-    /* Mobile: slow continuous zoom */
-    @media (max-width: 768px) {
-      .insta-item-inner {
-        animation: instaZoom 10s ease-in-out infinite alternate;
+    /* ==============================
+   MOBILE & GRID OVERRIDES (fixu.md)
+   ============================== */
+    @media (max-width: 1024px) {
+      .products-grid, .related-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+        padding: 0 15px !important;
+      }
+      .product-card {
+        width: 100% !important;
       }
     }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    /* GLOBAL RADIUS */
+    .product-card, .product-img-wrap, .cat-card, .cat-image-wrap, 
+    .gallery-main, .gallery-thumb, .insta-item, .insta-item-inner,
+    .write-review-box, .pay-card, .admin-form-group input, .admin-form-group select,
+    .admin-form-group textarea, .btn-place-order, .btn-add-cart, .btn-buy-now {
+      border-radius: 12px !important;
+    }
+
+    /* WHATSAPP ADJUSTMENT */
+    .whatsapp-float {
+      bottom: 40px !important;
+      right: 30px !important;
+    }
+
 
     @keyframes instaZoom {
       from { transform: scale(1); }
@@ -3971,23 +3873,34 @@
           <div class="product-detail-info" id="product-detail-info"></div>
         </div>
         
-        <!-- REVIEWS SECTION -->
-        <div id="product-reviews" style="padding: 60px; background:var(--white);">
+        <!-- Related Products (Reordered Above Reviews) -->
+        <div id="related-products" style="padding: 60px 20px; background:var(--beige-light);">
+          <div class="section-header" style="margin-bottom:40px;">
+            <span class="section-eyebrow">From the Same Collection</span>
+            <h2 class="section-title" style="font-size:clamp(22px,3vw,30px);">You May Also Like</h2>
+            <div class="section-divider"></div>
+          </div>
+          <div id="related-row" class="related-grid"></div>
+        </div>
+
+        <!-- REVIEWS SECTION (Vertical Stack) -->
+        <div id="product-reviews" style="padding: 60px 20px; background:var(--white);">
           <div class="section-header" style="margin-bottom:40px;">
             <span class="section-eyebrow">Real Stories</span>
             <h2 class="section-title" style="font-size:clamp(22px,3vw,30px);">Customer Reviews</h2>
             <div class="section-divider"></div>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
-            <div>
+          
+          <div class="reviews-stack" style="max-width:800px; margin:0 auto;">
+            <div class="write-review-box" style="background:var(--beige-light); padding:40px; border-radius:14px; margin-bottom:60px;">
               <h3 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:24px;">Write a Review</h3>
               <div class="form-group" style="margin-bottom:20px;">
                 <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Your Name</label>
-                <input type="text" id="rev-name" placeholder="E.g. Priya Sharma" style="width:100%;border:none;border-bottom:1px solid rgba(58,46,42,0.2);padding:8px 0;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;">
+                <input type="text" id="rev-name" placeholder="E.g. Priya Sharma" style="width:100%; border:none; border-bottom:1px solid rgba(58,46,42,0.2); background:transparent; padding:8px 0; font-family:'Cormorant Garamond',serif; font-size:18px; outline:none;">
               </div>
               <div class="form-group" style="margin-bottom:20px;">
                 <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Rating</label>
-                <select id="rev-rating" style="width:100%;border:1px solid rgba(58,46,42,0.2);padding:12px;font-family:'Cormorant Garamond',serif;font-size:16px;outline:none;background:transparent;">
+                <select id="rev-rating" style="width:100%; border:1px solid rgba(58,46,42,0.2); padding:12px; font-family:'Cormorant Garamond',serif; font-size:16px; outline:none; background:transparent;">
                   <option value="5">★★★★★ (5/5)</option>
                   <option value="4">★★★★☆ (4/5)</option>
                   <option value="3">★★★☆☆ (3/5)</option>
@@ -3999,26 +3912,18 @@
                 <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Upload Image (Max 10MB, Optional)</label>
                 <input type="file" id="rev-image" accept="image/*" style="font-family:'Jost',sans-serif;font-size:12px;">
               </div>
-              <div class="form-group" style="margin-bottom:32px;">
-                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Your Review</label>
-                <textarea id="rev-text" rows="4" placeholder="Share your experience..." style="width:100%;border:none;border-bottom:1px solid rgba(58,46,42,0.2);padding:8px 0;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;resize:vertical;"></textarea>
+              <div class="form-group" style="margin-bottom:24px;">
+                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Your Experience</label>
+                <textarea id="rev-text" rows="4" placeholder="Tell us what you liked about the product..." style="width:100%; border:1px solid rgba(58,46,42,0.2); padding:12px; font-family:'Cormorant Garamond',serif; font-size:16px; outline:none; background:transparent; resize:vertical;"></textarea>
               </div>
-              <button class="btn-buy-now" style="height:48px;margin-bottom:0;" onclick="submitReview()">Submit Review</button>
+              <button onclick="submitReview()" style="width:100%; background:var(--text-main); color:var(--white); border:none; padding:16px; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:0.3s; border-radius:4px;">Post Review</button>
             </div>
-            <div id="reviews-list" style="display:flex;flex-direction:column;gap:28px;max-height:640px;overflow-y:auto;padding-right:12px;">
-              <!-- Reviews injected here -->
+            
+            <div id="reviews-list" style="display:flex; flex-direction:column; gap:40px;">
+              <!-- Reviews list items injected here -->
             </div>
           </div>
         </div>
-      </div>
-      <!-- Related Products -->
-      <div id="related-products">
-        <div class="section-header">
-          <span class="section-eyebrow">From the Same Collection</span>
-          <h2 class="section-title" style="font-size:clamp(22px,3vw,30px);">You May Also Like</h2>
-          <div class="section-divider"></div>
-        </div>
-        <div id="related-row" class="product-row"></div>
       </div>
     </div>
 
@@ -4256,6 +4161,7 @@
         <div class="admin-nav-item" onclick="showAdminTab('banners')">Banners</div>
         <div class="admin-nav-item" onclick="showAdminTab('categories')">Categories</div>
         <div class="admin-nav-item" onclick="showAdminTab('orders')">Orders</div>
+        <div class="admin-nav-item" onclick="showAdminTab('reviews')">Reviews</div>
       </div>
       <div class="admin-content">
         <div class="admin-tab active" id="admin-tab-products">
@@ -4351,6 +4257,9 @@
             </thead>
             <tbody id="admin-orders-tbody"></tbody>
           </table>
+        <div class="admin-tab" id="admin-tab-reviews">
+          <h2 class="admin-section-title">Manage Reviews</h2>
+          <div id="admin-reviews-list" style="display:flex; flex-direction:column; gap:20px;"></div>
         </div>
       </div>
     </div>
@@ -4727,11 +4636,25 @@
     }
     document.getElementById('mega-menu').addEventListener('mouseenter', () => clearTimeout(megaMenuTimeout));
 
-    function openMobileMenu() { document.getElementById('mobile-menu').classList.add('open'); document.getElementById('overlay-bg').classList.add('active'); document.getElementById('hamburger').classList.add('open'); }
-    function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('overlay-bg').classList.remove('active'); document.getElementById('hamburger').classList.remove('open'); }
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.contains('open') ? closeMobileMenu() : openMobileMenu();
-    });
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('overlay-bg');
+      const hamburger = document.getElementById('hamburger');
+      const isOpen = menu.classList.contains('open');
+      
+      if (isOpen) {
+        menu.classList.remove('open');
+        overlay.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('open');
+      } else {
+        menu.classList.add('open');
+        overlay.classList.add('active');
+        if (hamburger) hamburger.classList.add('open');
+      }
+    }
+    
+    function openMobileMenu() { toggleMobileMenu(); }
+    function closeMobileMenu() { if(document.getElementById('mobile-menu').classList.contains('open')) toggleMobileMenu(); }
     function toggleMobileAccordion(id) {
       const item = document.getElementById(id), was = item.classList.contains('open');
       document.querySelectorAll('.mobile-accordion-item').forEach(el => el.classList.remove('open'));
@@ -4760,7 +4683,7 @@
     function renderHero() {
       const h = document.getElementById('hero');
       if (!h) return;
-      const slides = banners.map((b, i) => '<div class="hero-slide ' + (i === 0 ? 'active' : '') + '" id="slide-' + i + '">' + (b.image ? '<img src="' + b.image + '" class="hero-bg-img" loading="' + (i === 0 ? 'eager' : 'lazy') + '">' : '') + '<div class="hero-grain"></div><div class="hero-content" style="z-index:2;position:relative;"><div class="hero-eyebrow">' + b.eyebrow + '</div><h1 class="hero-heading" style="color:var(--white);">' + b.heading + '</h1><p class="hero-sub" style="color:rgba(255,255,255,0.9);">' + b.sub + '</p><span class="hero-cta" style="color:var(--white);border-color:var(--white);" onclick="filterCategory(\'' + b.category + '\')">Explore Collection</span></div></div>').join('');
+      const slides = banners.map((b, i) => '<div class="hero-slide ' + (i === 0 ? 'active' : '') + '" id="slide-' + i + '">' + (b.image ? '<img src="' + b.image + '" class="hero-bg-img" loading="' + (i === 0 ? 'eager' : 'lazy') + '" onerror="this.src=\'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1600&q=80\'">' : '') + '<div class="hero-grain"></div><div class="hero-content" style="z-index:2;position:relative;"><div class="hero-eyebrow">' + b.eyebrow + '</div><h1 class="hero-heading" style="color:var(--white);">' + b.heading + '</h1><p class="hero-sub" style="color:rgba(255,255,255,0.9);">' + b.sub + '</p><span class="hero-cta" style="color:var(--white);border-color:var(--white);" onclick="filterCategory(\'' + b.category + '\')">Explore Collection</span></div></div>').join('');
       const dots = '<div class="hero-dots" id="hero-dots" style="z-index:2;">' + banners.map((b, i) => '<div class="hero-dot ' + (i === 0 ? 'active' : '') + '" onclick="goToSlide(' + i + ')"></div>').join('') + '</div>';
       h.innerHTML = slides + dots;
     }
@@ -4856,16 +4779,16 @@
 
     function openAdmin() {
       document.getElementById('admin-panel').classList.add('open');
-      renderAdminProducts(); renderAdminBanners(); renderAdminCategories(); renderAdminOrders();
+      renderAdminProducts(); renderAdminBanners(); renderAdminCategories(); renderAdminOrders(); renderAdminReviews();
     }
     function closeAdmin() { document.getElementById('admin-panel').classList.remove('open'); }
 
     function showAdminTab(tab) {
       document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
-      const m = { products: 'admin-tab-products', banners: 'admin-tab-banners', categories: 'admin-tab-categories', orders: 'admin-orders' };
+      const m = { products: 'admin-tab-products', banners: 'admin-tab-banners', categories: 'admin-tab-categories', orders: 'admin-orders', reviews: 'admin-tab-reviews' };
       const el = document.getElementById(m[tab]); if (el) el.classList.add('active');
-      const navMap = { products: 0, banners: 1, categories: 2, orders: 3 };
+      const navMap = { products: 0, banners: 1, categories: 2, orders: 3, reviews: 4 };
       const navs = document.querySelectorAll('.admin-nav-item');
       if (navMap[tab] !== undefined && navs[navMap[tab]]) navs[navMap[tab]].classList.add('active');
     }
@@ -4946,6 +4869,32 @@
     function updateOrderStatus(orderId, status) {
       const orders = JSON.parse(localStorage.getItem('aashirwad_orders') || '[]');
       const o = orders.find(x => x.id === orderId); if (o) { o.status = status; localStorage.setItem('aashirwad_orders', JSON.stringify(orders)); }
+    }
+
+    function renderAdminReviews() {
+      const reviews = JSON.parse(localStorage.getItem('aashirwad_reviews') || '[]');
+      const list = document.getElementById('admin-reviews-list');
+      if(!list) return;
+      if(!reviews.length) { list.innerHTML = '<p style="text-align:center; color:var(--text-muted); padding:40px;">No custom reviews yet.</p>'; return; }
+      list.innerHTML = reviews.map((r, i) => `
+        <div style="background:var(--white); padding:20px; border-radius:12px; border:1px solid rgba(214,191,167,0.3); display:flex; justify-content:space-between; align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="font-family:'Playfair Display',serif; font-size:16px;">${r.name} <span style="font-size:12px; color:var(--text-muted);">on Product ${r.productId}</span></div>
+            <div style="color:#FFA41C; font-size:12px; margin:4px 0;">${'★'.repeat(r.rating)}</div>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:14px; color:var(--text-muted); margin-top:8px;">${r.text}</p>
+          </div>
+          <button class="admin-btn admin-btn-outline admin-btn-sm" style="color:#B06B6B; border-color:#B06B6B;" onclick="deleteAdminReview(${i})">Delete</button>
+        </div>
+      `).join('');
+    }
+
+    function deleteAdminReview(idx) {
+      if(!confirm('Delete this review?')) return;
+      const reviews = JSON.parse(localStorage.getItem('aashirwad_reviews') || '[]');
+      reviews.splice(idx, 1);
+      localStorage.setItem('aashirwad_reviews', JSON.stringify(reviews));
+      renderAdminReviews();
+      renderReviews(); // update product page if open
     }
 
     function handleHashRoute() {
