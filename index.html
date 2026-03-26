@@ -2096,8 +2096,75 @@
     }
   </style>
 
+  <!-- OVERLAY BACKGROUND -->
+  <div class="overlay-bg" id="overlay-bg" onclick="closeMobileMenu()"></div>
+
+  <!-- NAVBAR (Restored) -->
+  <header id="navbar" class="glass-nav" style="z-index: 10001; position: fixed; top: 0; left: 0; width: 100%; transition: all var(--transition-panel);">
+    <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; padding: 20px 60px; max-width: 1440px; margin: 0 auto;">
+      <div class="nav-logo" onclick="navigateTo('home')" style="font-family: 'Playfair Display', serif; font-size: 28px; cursor: pointer;">Ashirwad</div>
+      
+      <div class="nav-center" style="display: flex; gap: 40px; align-items: center;">
+        <span class="nav-link active" onclick="navigateTo('home')">Home</span>
+        <span class="nav-link" onclick="navigateTo('shop')">Shop All</span>
+        <span class="nav-link" onclick="filterCategory('Resin')">Resin Art</span>
+        <span class="nav-link" onclick="filterCategory('Hampers')">Hampers</span>
+        <span class="nav-link" onclick="scrollToSection('why-us')">Our Story</span>
+      </div>
+
+      <div class="nav-right" style="display: flex; gap: 24px; align-items: center;">
+        <!-- Search -->
+        <button class="nav-icon-btn">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <!-- Account -->
+        <button class="nav-icon-btn" onclick="document.getElementById('admin-panel').classList.add('open')">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <!-- Cart -->
+        <button class="nav-icon-btn" onclick="openCartDrawer()">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <!-- Hamburger for mobile -->
+        <div class="hamburger" id="hamburger" style="display: none; cursor: pointer; flex-direction: column; gap: 6px; width: 30px;" onclick="toggleMobileMenu()">
+          <div style="width: 100%; height: 2px; background: var(--text-main); transition: 0.3s;"></div>
+          <div style="width: 100%; height: 2px; background: var(--text-main); transition: 0.3s;"></div>
+          <div style="width: 100%; height: 2px; background: var(--text-main); transition: 0.3s;"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    @media (max-width: 1024px) {
+      .nav-center { display: none !important; }
+      .hamburger { display: flex !important; }
+      .nav-container { padding: 16px 24px !important; }
+      
+      /* Mobile override for alignment fixu.md: logo center, icons right, menu left */
+      .nav-container {
+        display: grid !important;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+      }
+      .nav-logo {
+        text-align: center;
+        grid-column: 2;
+      }
+      .hamburger {
+        grid-column: 1;
+        justify-self: start;
+      }
+      .nav-right {
+        grid-column: 3;
+        justify-self: end;
+      }
+    }
+  </style>
+
   <!-- MOBILE MENU -->
-  <div id="mobile-menu">
+  <div id="mobile-menu" style="z-index: 10002;">
     <div class="mobile-menu-header">
       <div class="mobile-menu-logo">Ashirwad</div>
       <div class="mobile-menu-close" onclick="closeMobileMenu()">

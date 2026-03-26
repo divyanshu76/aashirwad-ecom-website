@@ -1,6 +1,6 @@
-# 🌿 Aashirwad — Premium Ecommerce Website
+# 🌿 Ashirwad — Premium Ecommerce Website
 
-Aashirwad is a luxury handcrafted ecommerce website designed with a premium UI/UX experience.
+Ashirwad is a luxury handcrafted ecommerce website designed with a premium UI/UX experience.
 It features smooth animations, modern design, and a fully functional shopping system.
 
 ---
@@ -66,7 +66,7 @@ It features smooth animations, modern design, and a fully functional shopping sy
 
 ## 👑 Author
 
-Divyanshu
+Divyanshu Verma
 
 ---
 
