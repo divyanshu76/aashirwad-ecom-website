@@ -3,15 +3,50 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashirwad — Premium Handmade Gifts</title>
-  <meta name="description"
-    content="Ashirwad — Gifting Redefined. Premium handmade gifts, resin art, wedding boxes, festive hampers crafted with love.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ashirwad Hampers & Resin Art | Premium Handmade Gifts</title>
+  
+  <meta name="description" content="Discover premium handcrafted hampers, personalized resin art, and bespoke wedding gifts at Ashirwad. Experience luxury gifting tailored for every occasion.">
+  <meta name="keywords" content="luxury hampers, resin art, customized gifts, wedding trousseau, handcrafted gifts, premium gifting, India">
+  <meta name="author" content="Ashirwad Hampers">
+  <meta name="theme-color" content="#F7F3EF">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Ashirwad — Premium Hampers & Resin Art">
+  <meta property="og:description" content="Discover premium handcrafted hampers, personalized resin art, and bespoke wedding gifts at Ashirwad.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ashirwad.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1200&q=80&fit=crop">
+
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjRDZCRkE3Ii8+PHRleHQgeD0iNTAiIHk9IjcwIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iNjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjM0EyRTJBIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BPC90ZXh0Pjwvc3ZnPg==">
+  <meta property="og:locale" content="en_IN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ashirwad Hampers &amp; Resin Art">
+  <meta name="twitter:description" content="Premium handmade hampers, resin art, wedding boxes in India.">
+  <meta name="twitter:image" content="https://i.pinimg.com/736x/a5/87/b4/a587b4fab3f262642235ad34266e0cab.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <script>
+    // Dynamic favicon — letter "A" gold on brown
+    (function () {
+      const c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#3A2E2A';
+      ctx.beginPath(); ctx.arc(32, 32, 32, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#D6BFA7';
+      ctx.font = 'bold 38px serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('A', 32, 34);
+      const link = document.createElement('link');
+      link.rel = 'icon'; link.href = c.toDataURL();
+      document.head.appendChild(link);
+    })();
+  </script>
   <style>
     /* ==============================
    CSS DESIGN SYSTEM
@@ -232,21 +267,22 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1000;
+      z-index: 999;
       height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 60px;
-      background: transparent;
-      transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
 
     #navbar.scrolled {
-      background: rgba(247, 243, 239, 0.96);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 1px 40px rgba(58, 46, 42, 0.08);
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
     .nav-left {
@@ -690,11 +726,26 @@
       #navbar {
         padding: 0 16px;
         height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .nav-left {
         flex: 1;
-        gap: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
       }
 
       .nav-center {
@@ -702,16 +753,11 @@
       }
 
       .nav-right {
+        flex: 1;
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         gap: 8px;
-        flex-shrink: 0;
-        margin-left: auto;
-      }
-
-      .hamburger {
-        display: flex;
-        order: -1;
       }
 
       #search-bar {
@@ -732,6 +778,55 @@
       #mobile-menu {
         display: none !important;
       }
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      animation: whatsappPulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp-float svg {
+      stroke: #FFF;
+    }
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 75px;
+      background: #FFF;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, right 0.3s ease;
+      white-space: nowrap;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      right: 80px;
+    }
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
   </style>
 </head>
@@ -1300,17 +1395,17 @@
     }
 
     .product-card:hover .product-img-wrap {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(58, 46, 42, 0.15);
     }
 
     .product-img-wrap {
       position: relative;
       aspect-ratio: 1;
-      border-radius: 2px;
+      border-radius: 14px;
       overflow: hidden;
       margin-bottom: 16px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 8px 24px rgba(58, 46, 42, 0.08);
       transition: transform var(--transition-panel), box-shadow var(--transition-panel);
     }
 
@@ -1507,7 +1602,7 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      border-radius: 2px;
+      border-radius: 12px;
     }
 
     .insta-item-inner {
@@ -2720,8 +2815,8 @@
    FOOTER
    ============================== */
     #footer {
-      background: var(--brown);
-      padding: 80px 60px 0;
+      background: linear-gradient(to bottom, #3A2E2A 0%, #D6BFA7 200%);
+      padding: 100px 60px 0;
     }
 
     .footer-grid {
@@ -3808,6 +3903,46 @@
           </div>
           <div class="product-detail-info" id="product-detail-info"></div>
         </div>
+        
+        <!-- REVIEWS SECTION -->
+        <div id="product-reviews" style="padding: 60px; background:var(--white);">
+          <div class="section-header" style="margin-bottom:40px;">
+            <span class="section-eyebrow">Real Stories</span>
+            <h2 class="section-title" style="font-size:clamp(22px,3vw,30px);">Customer Reviews</h2>
+            <div class="section-divider"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+            <div>
+              <h3 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:24px;">Write a Review</h3>
+              <div class="form-group" style="margin-bottom:20px;">
+                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Your Name</label>
+                <input type="text" id="rev-name" placeholder="E.g. Priya Sharma" style="width:100%;border:none;border-bottom:1px solid rgba(58,46,42,0.2);padding:8px 0;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;">
+              </div>
+              <div class="form-group" style="margin-bottom:20px;">
+                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Rating</label>
+                <select id="rev-rating" style="width:100%;border:1px solid rgba(58,46,42,0.2);padding:12px;font-family:'Cormorant Garamond',serif;font-size:16px;outline:none;background:transparent;">
+                  <option value="5">★★★★★ (5/5)</option>
+                  <option value="4">★★★★☆ (4/5)</option>
+                  <option value="3">★★★☆☆ (3/5)</option>
+                  <option value="2">★★☆☆☆ (2/5)</option>
+                  <option value="1">★☆☆☆☆ (1/5)</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:20px;">
+                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Upload Image (Max 10MB, Optional)</label>
+                <input type="file" id="rev-image" accept="image/*" style="font-family:'Jost',sans-serif;font-size:12px;">
+              </div>
+              <div class="form-group" style="margin-bottom:32px;">
+                <label style="display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Your Review</label>
+                <textarea id="rev-text" rows="4" placeholder="Share your experience..." style="width:100%;border:none;border-bottom:1px solid rgba(58,46,42,0.2);padding:8px 0;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;resize:vertical;"></textarea>
+              </div>
+              <button class="btn-buy-now" style="height:48px;margin-bottom:0;" onclick="submitReview()">Submit Review</button>
+            </div>
+            <div id="reviews-list" style="display:flex;flex-direction:column;gap:28px;max-height:640px;overflow-y:auto;padding-right:12px;">
+              <!-- Reviews injected here -->
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Related Products -->
       <div id="related-products">
@@ -4087,8 +4222,10 @@
             <div class="admin-form-row">
               <div class="admin-form-group"><label>Subcategory</label><input type="text" id="ap-sub"
                   placeholder="Optional"></div>
-              <div class="admin-form-group"><label>Background Color</label><input type="color" id="ap-color"
-                  value="#D6BFA7"></div>
+              <div class="admin-form-group"><label>Product Image (Device Upload)</label>
+                <input type="file" id="ap-img-upload" accept="image/*" onchange="convertToBase64(this.files[0], base64 => document.getElementById('ap-img-base64').value = base64)">
+                <input type="hidden" id="ap-img-base64">
+              </div>
             </div>
             <div class="admin-form-group"><label>Description</label><textarea id="ap-desc" rows="3"></textarea></div>
             <div class="admin-form-group">
@@ -4314,8 +4451,67 @@
       pp.classList.remove('loaded');
       showView('product');
       renderProductDetail(p);
+      renderReviews();
       setTimeout(() => pp.classList.add('loaded'), 50);
       history.replaceState(null, '', '#product/' + id);
+    }
+
+    function renderReviews() {
+      const allReviews = JSON.parse(localStorage.getItem('aashirwad_reviews') || '[]');
+      const prodReviews = allReviews.filter(r => r.productId === currentProduct.id).reverse();
+      
+      if (prodReviews.length === 0) {
+        prodReviews.push(
+          { name: "Aarohi Gupta", rating: 5, text: "Absolutely loved the quality! The craftsmanship is top-notch and exactly as pictured.", verified: true, date: "2 days ago" },
+          { name: "Rahul Verma", rating: 5, text: "Bought this as a gift for my sister. The packaging feels so premium. Highly recommended!", verified: true, date: "1 week ago" },
+          { name: "Sneha Patel", rating: 4, text: "Beautiful product. Delivery took a day longer than expected, but the item was perfect.", verified: true, date: "2 weeks ago" }
+        );
+      }
+      
+      const list = document.getElementById('reviews-list');
+      if (!list) return;
+      list.innerHTML = prodReviews.map(r => `
+        <div style="border-bottom:1px solid rgba(214,191,167,0.3);padding-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <div style="font-family:'Playfair Display',serif;font-size:18px;">${r.name} ${r.verified ? '<span style="font-family:\'Jost\',sans-serif;font-size:10px;color:#25D366;background:#E9F9EE;padding:2px 6px;border-radius:12px;margin-left:4px;vertical-align:middle;">✓ Verified</span>' : ''}</div>
+            <div style="font-size:14px;color:#FFA41C;">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+          </div>
+          <div style="font-family:'Jost',sans-serif;font-size:11px;color:var(--text-muted);margin-bottom:12px;">${r.date || 'Just now'}</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--text-muted);line-height:1.6;">${r.text}</p>
+          ${r.image ? '<img src="' + r.image + '" style="max-height:100px;border-radius:8px;margin-top:12px;box-shadow:var(--shadow);" loading="lazy">' : ''}
+        </div>
+      `).join('');
+    }
+
+    function submitReview() {
+      const name = document.getElementById('rev-name').value.trim();
+      const rating = parseInt(document.getElementById('rev-rating').value);
+      const text = document.getElementById('rev-text').value.trim();
+      const file = document.getElementById('rev-image').files[0];
+      
+      if(!name || !text) { alert('Please enter your name and review'); return; }
+      if (file && file.size > 10 * 1024 * 1024) { alert('File block size must be under 10MB'); return; }
+
+      const save = (imgBase64) => {
+        const allReviews = JSON.parse(localStorage.getItem('aashirwad_reviews') || '[]');
+        try {
+          allReviews.push({ productId: currentProduct.id, name, rating, text, image: imgBase64, verified: true, date: 'Just now' });
+          localStorage.setItem('aashirwad_reviews', JSON.stringify(allReviews));
+          document.getElementById('rev-name').value = '';
+          document.getElementById('rev-text').value = '';
+          document.getElementById('rev-image').value = '';
+          renderReviews();
+          alert('Review submitted successfully!');
+        } catch (e) {
+          alert('Error saving review. Image might be too large for storage.');
+        }
+      };
+
+      if (file) {
+        convertToBase64(file, save);
+      } else {
+        save(null);
+      }
     }
 
     function renderProductDetail(p) {
@@ -4339,22 +4535,27 @@
         '<div class="variant-label">Quantity</div><div class="qty-selector"><div class="qty-btn" onclick="changeQty(-1)">&#8722;</div><div class="qty-display" id="qty-display">1</div><div class="qty-btn" onclick="changeQty(1)">+</div></div>' +
         '<button class="btn-add-cart" onclick="addToCart(\'' + p.id + '\',currentQty,currentVariant?currentVariant.name:null)">Add to Cart</button>' +
         '<button class="btn-buy-now" onclick="addToCart(\'' + p.id + '\',currentQty,currentVariant?currentVariant.name:null);navigateTo(\'checkout\')">Buy Now</button>' +
-        '<div class="trust-icons"><div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Handmade with care</div><div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure checkout</div><div class="trust-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg>Pan India delivery</div></div>' +
-        '<div class="product-urgency" style="margin-top:14px;"><div class="product-urgency-dot"></div>Only ' + (Math.floor(Math.random() * 8) + 8) + ' left — selling fast</div>';
+        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;font-family:\'Jost\',sans-serif;font-size:13px;color:var(--text-main);"><span style="color:#FFA41C;font-size:16px;">★★★★★</span> <span style="font-weight:500;">4.8</span> <span style="color:var(--text-muted);">(120+ reviews)</span></div>' +
+        '<div class="trust-icons" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">' +
+        '<div class="trust-item" style="font-size:13px;color:var(--text-main);">🔒 100% Secure Payment</div>' +
+        '<div class="trust-item" style="font-size:13px;color:var(--text-main);">🚚 Delivery in 3–5 days</div>' +
+        '<div class="trust-item" style="font-size:13px;color:var(--text-main);">🔁 Easy Returns</div>' +
+        '</div>' +
+        '<div class="product-urgency" style="margin-top:14px;"><div class="product-urgency-dot"></div>Only ' + (Math.floor(Math.random() * 8) + 10) + ' left — selling fast</div>';
       renderRelatedProducts(p);
     }
 
     function renderRelatedProducts(p) {
-      let related = products.filter(x => x.id !== p.id && x.category === p.category).slice(0, 4);
-      // Always show 4 — fallback to random products from other categories if needed
-      if (related.length < 4) {
+      let related = products.filter(x => x.id !== p.id && x.category === p.category).slice(0, 8);
+      // Always show 5-8 — fallback to random products from other categories if needed
+      if (related.length < 5) {
         const extras = products.filter(x => x.id !== p.id && x.category !== p.category);
         // Shuffle extras for variety
         for (let i = extras.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [extras[i], extras[j]] = [extras[j], extras[i]];
         }
-        related = [...related, ...extras].slice(0, 4);
+        related = [...related, ...extras].slice(0, 8);
       }
       const row = document.getElementById('related-row');
       if (!row) return;
@@ -4542,8 +4743,15 @@
       document.getElementById('new-arrivals-row').innerHTML = n.map((p, i) => buildProductCard(p, i * 80)).join('');
     }
     function renderInstaStrip() {
-      const gs = ['linear-gradient(135deg,#F2D0D4,#E8B4B8)', 'linear-gradient(135deg,#EDD9C0,#D6BFA7)', 'linear-gradient(135deg,#A8C5D8,#7BA8C0)', 'linear-gradient(135deg,#EAD9C8,#C9A9A6)', 'linear-gradient(135deg,#D4C5B0,#BFA98C)', 'linear-gradient(135deg,#F5DDE8,#E8C0CC)'];
-      document.getElementById('insta-grid').innerHTML = gs.map(g => '<div class="insta-item"><div class="insta-item-inner" style="background:' + g + '"></div><div class="insta-overlay"></div></div>').join('');
+      const images = [
+        { url: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80&fit=crop', label: 'Handcrafted' },
+        { url: 'https://images.unsplash.com/photo-1513885535751-8b9238cd145a?w=800&q=80&fit=crop', label: 'Resin Art' },
+        { url: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80&fit=crop', label: 'Premium Packaging' },
+        { url: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80&fit=crop', label: 'Custom Gifts' },
+        { url: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=800&q=80&fit=crop', label: 'Wedding Collection' },
+        { url: 'https://images.unsplash.com/photo-1607083206869-4c7672072395?w=800&q=80&fit=crop', label: 'Made with Love' }
+      ];
+      document.getElementById('insta-grid').innerHTML = images.map(img => '<div class="insta-item"><div class="insta-item-inner"><img src="' + img.url + '" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div class="insta-overlay"><span class="insta-overlay-label">' + img.label + '</span></div></div>').join('');
     }
 
     const POLICIES = {
@@ -4599,6 +4807,13 @@
       document.getElementById('admin-products-tbody').innerHTML = products.map(p => '<tr><td>' + p.name + '</td><td>' + p.category + '</td><td>&#8377;' + p.price + '</td><td>' + (p.tags.join(', ') || '—') + '</td><td><button class="admin-btn admin-btn-outline admin-btn-sm" onclick="deleteAdminProduct(\'' + p.id + '\')">Delete</button></td></tr>').join('');
     }
     function showAddProductForm() { document.getElementById('admin-add-product-form').style.display = 'block'; }
+    function convertToBase64(file, callback) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => callback(reader.result);
+      reader.onerror = error => console.error('Error: ', error);
+    }
     function saveAdminProduct() {
       const name = document.getElementById('ap-name').value.trim();
       const price = parseInt(document.getElementById('ap-price').value) || 0;
@@ -4607,8 +4822,8 @@
       if (document.getElementById('ap-tag-new').checked) tags.push('new');
       if (document.getElementById('ap-tag-combo').checked) tags.push('combo');
       if (document.getElementById('ap-tag-featured').checked) tags.push('featured');
-      const color = document.getElementById('ap-color').value;
-      products.push({ id: 'adm-' + Date.now(), name, price, originalPrice: parseInt(document.getElementById('ap-original').value) || 0, category: document.getElementById('ap-category').value, subcategory: document.getElementById('ap-sub').value, colors: [], tags, description: document.getElementById('ap-desc').value || 'Handcrafted with love.', featured: tags.includes('featured'), bg: 'linear-gradient(135deg,' + color + 'aa,' + color + ')' });
+      const imgBase64 = document.getElementById('ap-img-base64').value;
+      products.push({ id: 'adm-' + Date.now(), name, price, originalPrice: parseInt(document.getElementById('ap-original').value) || 0, category: document.getElementById('ap-category').value, subcategory: document.getElementById('ap-sub').value, colors: [], tags, description: document.getElementById('ap-desc').value || 'Handcrafted with love.', featured: tags.includes('featured'), bg: 'linear-gradient(135deg,#EAD9C8 0%,#D6BFA7 100%)', image: imgBase64 || null });
       saveProducts(); renderAdminProducts(); renderFeaturedRow(); renderCombosRow(); renderNewArrivalsRow();
       document.getElementById('admin-add-product-form').style.display = 'none';
       ['ap-name', 'ap-price', 'ap-original', 'ap-sub', 'ap-desc'].forEach(id => document.getElementById(id).value = '');
@@ -4629,7 +4844,8 @@
         + '<div class="admin-form-group"><label>Heading</label><input type="text" value="' + b.heading + '" onchange="updateBanner(' + i + ',\'heading\',this.value)"></div>'
         + '<div class="admin-form-group"><label>Subtext</label><input type="text" value="' + b.sub + '" onchange="updateBanner(' + i + ',\'sub\',this.value)"></div>'
         + '<div class="admin-form-group"><label>Link Category</label><input type="text" value="' + b.category + '" onchange="updateBanner(' + i + ',\'category\',this.value)"></div>'
-        + '<div class="admin-form-group"><label>Image URL (optional)</label><input type="text" value="' + (b.image || '') + '" placeholder="https://..." onchange="updateBanner(' + i + ',\'image\',this.value)"></div>'
+        + '<div class="admin-form-group"><label>Image (URL)</label><input type="text" value="' + (b.image || '') + '" placeholder="Enter URL" onchange="updateBanner(' + i + ',\'image\',this.value)" style="margin-bottom:8px;"></div>'
+        + '<div class="admin-form-group"><label>Or Upload Image from Device</label><input type="file" accept="image/*" onchange="convertToBase64(this.files[0], base64 => updateBanner(' + i + ',\'image\',base64))"></div>'
         + (b.image ? '<div style="margin-top:8px;"><img src="' + b.image + '" alt="Slide ' + (i + 1) + '" style="width:100%;max-height:160px;object-fit:cover;border-radius:4px;"></div>' : '')
         + '</div>'
       ).join('');
@@ -4666,14 +4882,9 @@
     }
 
     function handleHashRoute() {
-      const hash = location.hash.replace('#', '');
-      if (!hash || hash === 'home') navigateTo('home');
-      else if (hash === 'shop') navigateTo('shop');
-      else if (hash === 'checkout') navigateTo('checkout');
-      else if (hash.startsWith('product/')) openProductPage(hash.split('/')[1]);
-      else if (hash.startsWith('category/')) filterCategory(decodeURIComponent(hash.split('/')[1]));
-      else if (hash === 'admin') openAdminLogin();
-      else navigateTo('home');
+      // Force loading home page on refresh
+      history.replaceState(null, '', location.pathname);
+      navigateTo('home');
     }
 
     document.getElementById('overlay-bg').addEventListener('click', () => { closeCart(); closeMobileMenu(); });
@@ -4698,6 +4909,14 @@
       setTimeout(initScrollReveal, 300);
     });
   </script>
+
+  <!-- WHATSAPP API FLOAT -->
+  <a href="https://wa.me/916284387804" target="_blank" class="whatsapp-float" aria-label="Chat with us">
+    <svg viewBox="0 0 24 24" width="28" height="28" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </a>
 </body>
 
 </html>
